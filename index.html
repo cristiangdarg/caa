@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAA Profesional</title>
+<link rel="stylesheet" href="css/styles.css">
+<script>
+    function openModal(){
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+</head>
+<body>
+<header>
+<h1>🗣️ Comunicador CAA</h1>
+</header>
+
+<section class="sentence-panel">
+<div id="sentence"></div>
+<div class="toolbar">
+<button style="background-color: green;color: aliceblue;" class="" onclick="speakSentence()">▶ Hablar frase</button>
+<button style="background-color: red;color: aliceblue;" onclick="clearSentence()">🗑 Limpiar</button>
+<button style="background-color: blue;color: aliceblue;" onclick="openModal()">➕ Agregar pictograma</button>
+</div>
+</section>
+
+<section class="sentence-panel">
+<button class="cat active" data-cat="Todos">Todos</button>
+<button class="cat" data-cat="Personas">Personas</button>
+<button class="cat" data-cat="Acciones">Acciones</button>
+<button class="cat" data-cat="Emociones">Emociones</button>
+<button class="cat" data-cat="Objetos">Objetos</button>
+</section>
+
+<section id="grid" class="grid"></section>
+
+<div id="modal" class="modal">
+<div class="modal-box">
+<h2>Nuevo pictograma</h2>
+<input id="text" placeholder="Texto">
+<select id="category">
+<option>Personas</option>
+<option>Acciones</option>
+<option>Emociones</option>
+<option>Objetos</option>
+</select>
+<input type="file" id="image" accept="image/*">
+<button onclick="savePicto()">Guardar</button>
+<button onclick="closeModal()">Cancelar</button>
+</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
