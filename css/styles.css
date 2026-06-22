@@ -1,0 +1,132 @@
+
+body{margin:0;font-family:Arial,sans-serif;background:#eef5ff}
+header{text-align:center;padding:5px;background:#039622;color:white}
+.sentence-panel{padding:15px}
+#sentence{min-height:90px;background:white;border-radius:16px;padding:10px;display:flex;flex-wrap:wrap;gap:8px}
+.word{background:#ffe680;padding:10px;border-radius:12px;font-weight:bold}
+.toolbar,.categories{display:flex;gap:10px;flex-wrap:wrap;padding:10px 0}
+button{border:none;padding:12px 18px;border-radius:12px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:15px;padding:15px}
+.card{background:white;border-radius:16px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.15);cursor:pointer}
+.card img{width:100%;height:110px;object-fit:contain}
+/*.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);justify-content:center;align-items:center}
+.modal-box{background:white;padding:20px;border-radius:16px;width:320px}
+.modal-box input,.modal-box select{width:100%;margin:8px 0;padding:10px}*/
+.active{background:#4f7cff;color:white}
+@media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+.buttons button{
+    flex:1;
+}
+
+/* Fondo oscuro */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(4px);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+/* Ventana */
+.modal-box{
+    width:90%;
+    max-width:450px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    animation:modalOpen .3s ease;
+}
+
+/* Título */
+.modal-box h2{
+    margin:0;
+    text-align:center;
+    color:#333;
+    font-size:24px;
+    font-family:Arial, sans-serif;
+}
+
+/* Inputs */
+.modal-box input[type="text"],
+.modal-box input:not([type="file"]),
+.modal-box select{
+    width:100%;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+.modal-box input:focus,
+.modal-box select:focus{
+    border-color:#2196F3;
+    box-shadow:0 0 8px rgba(33,150,243,.3);
+}
+
+/* Input archivo */
+#image{
+    padding:10px;
+    border:2px dashed #2196F3;
+    border-radius:10px;
+    background:#f5faff;
+    cursor:pointer;
+}
+
+/* Botones */
+.modal-box button{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* Guardar */
+.modal-box button:first-of-type{
+    background:#4CAF50;
+    color:white;
+}
+
+.modal-box button:first-of-type:hover{
+    background:#43a047;
+}
+
+/* Cancelar */
+.modal-box button:last-of-type{
+    background:#f44336;
+    color:white;
+}
+
+.modal-box button:last-of-type:hover{
+    background:#e53935;
+}
+
+/* Animación */
+@keyframes modalOpen{
+    from{
+        opacity:0;
+        transform:translateY(-20px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
